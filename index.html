@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="大学毕业生家长调查问卷。请根据您的真实感受作答，感谢您的参与。">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src https://formspree.io; form-action https://formspree.io; img-src 'self' data:; base-uri 'none'; object-src 'none'">
+  <meta name="theme-color" content="#ffffff">
+  <title>大学毕业生家长调查问卷</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./config.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#questions">直接填写问卷</a>
+  <div class="progress-header" id="progress-header">
+    <div class="progress-inner">
+      <span>填写进度</span><span id="progress-text">已完成 0 / 25 题</span>
+      <progress id="progress" max="25" value="0" aria-label="问卷填写进度">0 / 25</progress>
+    </div>
+  </div>
+  <main class="paper">
+    <header class="intro">
+      <h1>大学毕业生家长调查问卷</h1>
+      <p class="salutation">亲爱的家长：</p>
+      <p>您好！感谢您参与本次问卷。我们希望通过这 25 个问题，了解您与孩子相处的感受，以及您对生活与未来的想法。</p>
+      <p>答案没有对错，请按真实感受填写。暂时没有想法的题目，可以填写“暂无”或“不愿回答”。</p>
+      <p class="instructions"><span class="required" aria-hidden="true">*</span> 所有题目均为必填，请向下滚动依次作答。</p>
+    </header>
+    <div id="setup-notice" class="notice" role="status" hidden>问卷暂未开放提交，请等待发布者完成收集设置。您可以先浏览题目。</div>
+    <noscript><p class="notice">填写问卷需要启用 JavaScript。请在浏览器设置中启用，或更换浏览器后重新打开。</p></noscript>
+    <form id="survey" method="post" autocomplete="off" novalidate hidden>
+      <div id="questions"></div>
+      <div class="submission">
+        <p class="privacy">您的回答将通过加密连接发送至 Formspree，由问卷发布者在其账户后台查看。本页不展示任何人的回答，也不将回答写入 GitHub。请勿填写姓名、联系方式或其他可识别个人身份的信息。</p>
+        <label class="consent"><input id="consent" type="checkbox" required aria-describedby="consent-error"><span>我已了解以上说明，同意提交本次问卷答案。</span></label>
+        <p id="consent-error" class="error" hidden>请先阅读并勾选提交说明。</p>
+        <p id="form-status" class="form-status" role="alert" hidden></p>
+        <button id="submit-button" type="submit" disabled>提交问卷</button>
+        <p class="closing">谢谢您认真填写每一个答案。</p>
+      </div>
+    </form>
+    <section id="success" class="success" aria-labelledby="success-title" tabindex="-1" hidden>
+      <svg viewBox="0 0 48 48" width="56" height="56" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#e8f3ff"/><path d="m14 24 7 7 14-15" fill="none" stroke="#1768b2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h2 id="success-title">提交成功</h2>
+      <p>您的回答已提交。感谢您的时间与真诚分享！</p>
+      <p class="success-note">您可以安心关闭此页面，无需再次提交。</p>
+    </section>
+    <footer>大学毕业生家长调查问卷</footer>
+  </main>
+</body>
+</html>
